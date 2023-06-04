@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
 import { useAppContext } from '../../../contexts/app-contexts';
 import cls from './Form.module.scss';
 import { toastSuccess } from 'shared/ui/Toast/toast';
@@ -7,7 +6,6 @@ import { toastSuccess } from 'shared/ui/Toast/toast';
 
 
 export const LoginForm = () => {
-  const { t } = useTranslation('');
   const { setUsers, setUser, users, user } = useAppContext();
 
   const [interests, setInterests] = useState('Football');
