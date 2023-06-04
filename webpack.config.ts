@@ -26,5 +26,30 @@ export default (env: BuildEnv) => {
         project: 'frontend',
     });
 
-    return config;
+    const usedCongig = {
+        ...config,
+        output: {
+            path: path.resolve(__dirname, 'build'),
+            filename: '[name].bundle.js',
+            clean: true,
+            publicPath: 'auto',
+        },
+        module: {
+            ...config.module,
+            rules: [
+                ...(config.module?.rules || []),
+                {
+                    type: 'javascript/auto',
+                    test: /\.json$/,
+                    use: [
+                        {
+                            loader: 'raw-loader',
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+
+    return usedCongig;
 };
