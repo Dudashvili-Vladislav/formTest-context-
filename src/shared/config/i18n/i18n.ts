@@ -8,19 +8,22 @@ import ruData from './locales/ru';
 import enData from './locales/en';
 
 const config = {
-    fallbackLng: 'en',
     debug: __IS_DEV__,
+    fallbackLng: ['ru', 'en'],
+    supportedLngs: ['ru', 'en'],
 
     interpolation: {
         escapeValue: false,
     },
 
+    defaultNS: 'translation',
+
     resources: {
         ru: {
-            translation: ruData,
+            ruData,
         },
         en: {
-            translation: enData,
+            enData,
         },
     },
 };
