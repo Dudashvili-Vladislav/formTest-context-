@@ -9,9 +9,9 @@ import { AppContextProvider } from './shared/contexts/app-contexts';
 import 'app/styles/index.scss';
 
 
-
+const baseUrl = '/context';
 render(
-    <BrowserRouter>
+    <BrowserRouter basename={baseUrl}>
             <ErrorBoundary>
                 <ThemeProvider>
                     <AppContextProvider>
