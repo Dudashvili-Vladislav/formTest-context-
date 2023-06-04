@@ -9,8 +9,7 @@ import enData from './locales/en';
 
 const config = {
     debug: __IS_DEV__,
-    fallbackLng: ['ru', 'en'],
-    supportedLngs: ['ru', 'en'],
+    fallbackLng: 'en',
 
     interpolation: {
         escapeValue: false,
